@@ -59,7 +59,7 @@ function App() {
           <span className="text-4xl">👨🏾‍💻</span>
         </div>
         <a
-          href="http://github.com/tech-headlines"
+          href="https://github.com/ozorku/latest-tech-headlines"
           title="Talk is cheap, show me the code 👏"
         >
           <img src={github} alt="github" />

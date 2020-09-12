@@ -28,7 +28,6 @@ const ArticleCard = (props: any) => {
       .get(`${baseUrl}/wp-json/wp/v2/media/${props.post.featured_media}`)
       .then((response) => {
         setThumbnail(response.data.source_url);
-        console.log(response.data.source_url);
       });
   }, []);
   return (

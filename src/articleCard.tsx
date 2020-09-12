@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import axios from "axios";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ArticleCard = (props: any) => {
   const [thumbnail, setThumbnail] = useState();
@@ -33,10 +34,10 @@ const ArticleCard = (props: any) => {
   return (
     <div className="border sm:border-none bg-white sm:bg-transparent p-4 sm:p-0 lg:w-1/2 md:flex lg:justify-between mb-10 md:mb-20 rounded-lg">
       <div className="rounded-lg mb-5 md:mb-0 w-full md:w-2/5">
-        <img
+        <LazyLoadImage
           src={thumbnail}
           className="h-64 md:h-40"
-          alt=""
+          alt={props.post.slug}
           style={{
             borderRadius: "inherit",
             width: "100%",

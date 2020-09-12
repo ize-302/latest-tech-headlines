@@ -22,8 +22,6 @@ function App() {
             })
           )
         );
-        // setPosts(unsortedPosts);
-        console.log(response.data);
       });
 
     // tecgcabal
@@ -36,7 +34,6 @@ function App() {
           })
         )
       );
-      // setPosts(unsortedPosts);
     });
     // technext
     axios.get("https://technext.ng/wp-json/wp/v2/posts").then((response) => {

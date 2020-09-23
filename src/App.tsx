@@ -67,7 +67,23 @@ function App() {
           name="description"
           content="Latest Technology News headlines sourced from Techpoint.africa, Techcabal.com & Technext.ng"
         />
+        {/* dacebook */}
+        <meta property="og:url" content="https://ozorku.com" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Latest Technology News headlines sourced from Techpoint.africa, Techcabal.com & Technext.ng"
+        />
+        <meta
+          property="og:description"
+          content="Latest Technology News headlines sourced from Techpoint.africa, Techcabal.com & Technext.ng"
+        />
+        <meta
+          property="og:image"
+          content="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+        />
 
+        {/* twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -79,7 +95,7 @@ function App() {
         />
         <meta
           name="twitter:image"
-          content="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
+          content="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
         />
       </Helmet>
 

@@ -23,20 +23,21 @@ const ArticleCard = (props: any) => {
       default:
         break;
     }
-    axios
-      .get(`${baseUrl}/wp-json/wp/v2/media/${props.post.featured_media}`)
-      .then((response) => {
-        setThumbnail(response.data.source_url);
-      });
+    try {
+      axios
+        .get(`${baseUrl}/wp-json/wp/v2/media/${props.post.featured_media}`)
+        .then((response) => {
+          setThumbnail(response.data.source_url);
+        });
+    } catch (error) {
+      console.log(error.message);
+    }
   }, []);
   return (
     <div className="border sm:border-none bg-white sm:bg-transparent p-4 sm:p-0 lg:w-1/2 md:flex lg:justify-between mb-10 md:mb-20 rounded-lg">
       <div className="rounded-lg mb-5 md:mb-0 w-full md:w-2/5">
         <img
           src={thumbnail}
-          onLoad={() => {
-            console.log("e");
-          }}
           className="h-64 md:h-40"
           alt={props.post.slug}
           style={{

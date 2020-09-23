@@ -54,7 +54,7 @@ const ArticleCard = (props: any) => {
           dangerouslySetInnerHTML={{ __html: props.post.title.rendered }}
         ></a>
         <div className="mt-5 md:mt-0">
-          <p>{props.post.source}</p>
+          <p className="text-gray-500">{props.post.source}</p>
           <p className="text-xs md:text-sm">
             {moment(props.post.date).format("DD MMM YYYY, h:mm a")}
           </p>

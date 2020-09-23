@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 
 const SkeletonLoader = () => {
   return (
-    <div className="bg-red-400 border sm:border-none bg-white sm:bg-transparent p-4 sm:p-0 lg:w-1/2 md:flex lg:justify-between mb-10 md:mb-20 rounded-lg">
+    <div className="border sm:border-none bg-white sm:bg-transparent p-4 sm:p-0 lg:w-1/2 md:flex lg:justify-between mb-10 md:mb-20 rounded-lg">
       <div className="rounded-lg mb-5 md:mb-0 w-full md:w-2/5">
         <Skeleton
           style={{

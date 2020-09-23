@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import github from "./github.svg";
 import "./App.css";
 import ArticleCard from "./articleCard";
+import SkeletonLoader from "./skeletonLoader";
 import axios from "axios";
 
 function App() {
   const [posts, setPosts]: any = useState();
   const [unsortedPosts, setUnsortedPosts]: any = useState([]);
+  const [rows]: any = useState([1, 2, 3, 4]);
+  const [loading, setLoading]: any = useState(true);
 
   useEffect(() => {
     // let unsortedPosts: any = [];
@@ -22,6 +25,7 @@ function App() {
             })
           )
         );
+        setLoading(false);
       });
 
     // tecgcabal
@@ -78,9 +82,19 @@ function App() {
         </a>{" "}
       </h1>
 
-      <div className="lg:flex lg:justify-between lg:flex-wrap">
-        {posts &&
-          posts.map((post: any) => <ArticleCard key={post.id} post={post} />)}
+      <div>
+        {loading ? (
+          <div className="lg:flex lg:justify-between lg:flex-wrap">
+            {rows && rows.map((row: any) => <SkeletonLoader />)}
+          </div>
+        ) : (
+          <div className="lg:flex lg:justify-between lg:flex-wrap">
+            {posts &&
+              posts.map((post: any) => (
+                <ArticleCard key={post.id} post={post} />
+              ))}
+          </div>
+        )}
       </div>
 
       <footer className="text-center my-10 text-sm">

@@ -14,44 +14,50 @@ function App() {
 
   useEffect(() => {
     // let unsortedPosts: any = [];
-    // techpoint
-    axios
-      .get("https://techpoint.africa/wp-json/wp/v2/posts")
-      .then((response) => {
+    try {
+      // techpoint
+      axios
+        .get("https://techpoint.africa/wp-json/wp/v2/posts")
+        .then((response) => {
+          response.data.map((postData: any) =>
+            setUnsortedPosts(
+              unsortedPosts.push({
+                ...postData,
+                source: "Techpoint",
+              })
+            )
+          );
+          setLoading(false);
+        });
+
+      // tecgcabal
+      axios
+        .get("https://techcabal.com/wp-json/wp/v2/posts")
+        .then((response) => {
+          response.data.map((postData: any) =>
+            setUnsortedPosts(
+              unsortedPosts.push({
+                ...postData,
+                source: "Techcabal",
+              })
+            )
+          );
+        });
+      // technext
+      axios.get("https://technext.ng/wp-json/wp/v2/posts").then((response) => {
         response.data.map((postData: any) =>
           setUnsortedPosts(
             unsortedPosts.push({
               ...postData,
-              source: "Techpoint",
+              source: "Technext",
             })
           )
         );
-        setLoading(false);
       });
-
-    // tecgcabal
-    axios.get("https://techcabal.com/wp-json/wp/v2/posts").then((response) => {
-      response.data.map((postData: any) =>
-        setUnsortedPosts(
-          unsortedPosts.push({
-            ...postData,
-            source: "Techcabal",
-          })
-        )
-      );
-    });
-    // technext
-    axios.get("https://technext.ng/wp-json/wp/v2/posts").then((response) => {
-      response.data.map((postData: any) =>
-        setUnsortedPosts(
-          unsortedPosts.push({
-            ...postData,
-            source: "Technext",
-          })
-        )
-      );
-    });
-    setPosts(unsortedPosts);
+      setPosts(unsortedPosts);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   return (

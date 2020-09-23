@@ -4,6 +4,7 @@ import "./App.css";
 import ArticleCard from "./articleCard";
 import SkeletonLoader from "./skeletonLoader";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [posts, setPosts]: any = useState();
@@ -55,6 +56,33 @@ function App() {
 
   return (
     <div className="custom-container">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Latest Technology Headlines</title>
+        <link
+          rel="canonical"
+          href="https://latest-tech-headlines.netlify.app/"
+        />
+        <meta
+          name="description"
+          content="Latest Technology News headlines sourced from Techpoint.africa, Techcabal.com & Technext.ng"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Latest Technology News headlines sourced from Techpoint.africa, Techcabal.com & Technext.ng"
+        />
+        <meta
+          name="twitter:description"
+          content="Latest Technology News headlines sourced from Techpoint.africa, Techcabal.com & Technext.ng"
+        />
+        <meta
+          name="twitter:image"
+          content="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
+        />
+      </Helmet>
+
       <header className="flex justify-between items-center my-10">
         <div>
           <span className="text-4xl">👨🏾‍💻</span>
